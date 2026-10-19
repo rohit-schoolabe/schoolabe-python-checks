@@ -1,0 +1,13 @@
+Lesson string with 3 frames: [1, 2, 3, 4, 1, 2, 5, 1, 2]
+  FIFO: 7 faults   F F F F F F F hit hit
+  LRU: 7 faults   F F F F F F F hit hit
+  OPT: 5 faults   F F F F hit hit F hit hit
+FIFO on the same string with 4 frames: 7 faults
+Classic string: [1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5]
+  FIFO, 3 frames: 9 faults
+  FIFO, 4 frames: 10 faults
+  LRU, 3 frames: 10 faults
+  LRU, 4 frames: 8 faults
+1,000,000 random strings, 12 refs over pages 1-5, 3 frames vs 4:
+  FIFO faulted more with 4 frames: 1
+  LRU faulted more with 4 frames:  0
