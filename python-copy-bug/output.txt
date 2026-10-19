@@ -1,0 +1,15 @@
+1. shallow copy, then append
+   defaults: {'theme': 'dark', 'tags': ['new', 'beta']}
+   user_a  : {'theme': 'dark', 'tags': ['new', 'beta']}
+   same inner list? True
+inner lists shared with the original: [True, True, True]
+2. deepcopy, then append
+   defaults: {'theme': 'dark', 'tags': ['new']}
+   user_b  : {'theme': 'dark', 'tags': ['new', 'beta']}
+3. shallow copy, but rebind instead of mutate
+   defaults: {'theme': 'dark', 'tags': ['new']}
+   user_c  : {'theme': 'light', 'tags': ['new', 'beta']}
+repeated rows -> [[9, 0, 0], [9, 0, 0], [9, 0, 0]]
+comprehension   -> [[9, 0, 0], [0, 0, 0], [0, 0, 0]]
+deepcopy of 2,000 lists of 100 ints: 25 to 29 ms over 10 runs
+self-referencing list deep-copied fine: True
